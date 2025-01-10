@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
 
+import "custom_iconBtn.dart";
+
 class CustomBar extends StatelessWidget {
   const CustomBar({super.key});
 
@@ -19,20 +21,16 @@ class CustomBar extends StatelessWidget {
           const SizedBox(
             width: 154,
           ),
-          IconButton(
+          CustomIconButton(
+              icon: Icons.search_rounded,
+              size: 25,
               onPressed: () {},
-              icon: const Icon(
-                Icons.search_rounded,
-                color: Colors.white,
-                size: 25,
-              )),
-          IconButton(
+              color: Colors.white),
+          CustomIconButton(
+              icon: Icons.more_vert,
+              size: 25,
               onPressed: () {},
-              icon: Icon(
-                Icons.more_vert,
-                color: Colors.white,
-                size: 25,
-              )),
+              color: Colors.white)
         ],
       ),
     );

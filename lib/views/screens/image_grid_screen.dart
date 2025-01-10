@@ -8,7 +8,8 @@ import '../../view_model/blocs/img_state.dart';
 import '../widgets/author_carousel.dart';
 import '../widgets/custom_circularprogress.dart';
 import '../widgets/custom_top_bar.dart';
-import '../widgets/image_tile.dart';
+import '../widgets/grid_view.dart';
+import '../widgets/list_view.dart';
 import '../widgets/toogle_switch.dart'; // Import ToggleSwitch
 
 class ImageGridScreen extends StatefulWidget {
@@ -71,7 +72,6 @@ class _ImageGridScreenState extends State<ImageGridScreen> {
           child: Column(
             children: [
               const CustomBar(),
-              // ToggleSwitch at the top
               ToggleSwitch(
                 isToggled: _isGridView,
                 onToggle: () {
@@ -84,8 +84,6 @@ class _ImageGridScreenState extends State<ImageGridScreen> {
               const SizedBox(
                 height: 20,
               ),
-
-              // The grid of pics
               Expanded(
                 child: BlocBuilder<ImageBloc, ImageState>(
                   builder: (context, state) {
@@ -102,92 +100,17 @@ class _ImageGridScreenState extends State<ImageGridScreen> {
                           state is ImagesLoadedState ? state.hasMore : true;
 
                       return _isGridView
-                          ? Column(
-                              children: [
-                                Expanded(
-                                  child: GridView.builder(
-                                    controller: _scrollController,
-                                    gridDelegate:
-                                        const SliverGridDelegateWithFixedCrossAxisCount(
-                                      crossAxisCount: 3,
-                                      crossAxisSpacing: 5.0,
-                                      mainAxisSpacing: 5.0,
-                                    ),
-                                    itemCount:
-                                        images.length + (hasMore ? 1 : 0),
-                                    itemBuilder: (context, index) {
-                                      if (index == images.length) {
-                                        return Center(child: CPI());
-                                      }
-                                      return ImageTile(image: images[index]);
-                                    },
-                                  ),
-                                ),
-                                if (state is ImageLoadingState)
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: CPI(),
-                                  ),
-                              ],
+                          ? GridImageView(
+                              scrollController: _scrollController,
+                              images: images,
+                              hasMore: hasMore,
+                              state: state,
                             )
-                          //list of pics
-                          : Padding(
-                              padding: const EdgeInsets.only(left: 10.0),
-                              child: Column(
-                                children: [
-                                  Expanded(
-                                    child: GridView.builder(
-                                      controller: _scrollController,
-                                      gridDelegate:
-                                          const SliverGridDelegateWithFixedCrossAxisCount(
-                                        crossAxisCount: 1,
-                                        crossAxisSpacing: 8.0,
-                                        mainAxisSpacing: 8.0,
-                                        childAspectRatio: 4,
-                                      ),
-                                      itemCount:
-                                          images.length + (hasMore ? 1 : 0),
-                                      itemBuilder: (context, index) {
-                                        if (index == images.length) {
-                                          return Center(child: CPI());
-                                        }
-                                        return Row(
-                                          children: [
-                                            SizedBox(
-                                                height: 160,
-                                                width: 160,
-                                                child: ImageTile(
-                                                    image: images[index])),
-                                            const SizedBox(
-                                              width: 10,
-                                            ),
-                                            Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                              children: [
-                                                Text(
-                                                  "Author:\n${images[index]['author']}",
-                                                  style: const TextStyle(
-                                                      fontSize: 14,
-                                                      fontWeight:
-                                                          FontWeight.w600),
-                                                ),
-                                              ],
-                                            )
-                                          ],
-                                        );
-                                      },
-                                    ),
-                                  ),
-                                  if (state is ImageLoadingState)
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: CPI(),
-                                    ),
-                                ],
-                              ),
+                          : ListImageView(
+                              scrollController: _scrollController,
+                              images: images,
+                              hasMore: hasMore,
+                              state: state,
                             );
                     } else if (state is ImageErrorState) {
                       return const Center(child: Text('Failed to load images'));

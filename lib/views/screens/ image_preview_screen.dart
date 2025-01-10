@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 
+import '../widgets/custom_iconBtn.dart';
+
 class ImagePreviewScreen extends StatelessWidget {
   final List<dynamic> images;
   final int initialIndex;
@@ -42,35 +44,28 @@ class ImagePreviewScreen extends StatelessWidget {
             left: 20,
             child: Row(
               children: [
-                IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(
-                      Icons.cancel,
-                      color: Colors.grey,
-                      size: 30,
-                    )),
+                CustomIconButton(
+                  icon: Icons.cancel,
+                  size: 30,
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
                 const SizedBox(
                   width: 200,
                 ),
-                IconButton(
-                    onPressed: () {
-                      // Pass the download URL for the image to the download function
-                      _downloadImage(images[initialIndex]['download_url']);
-                    },
-                    icon: const Icon(
-                      Icons.download_rounded,
-                      color: Colors.grey,
-                      size: 30,
-                    )),
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.share_rounded,
-                      color: Colors.grey,
-                      size: 30,
-                    )),
+                CustomIconButton(
+                  icon: Icons.download_rounded,
+                  size: 30,
+                  onPressed: () {
+                    _downloadImage(images[initialIndex]['download_url']);
+                  },
+                ),
+                CustomIconButton(
+                  icon: Icons.share_rounded,
+                  size: 30,
+                  onPressed: () {},
+                ),
               ],
             ),
           ),
