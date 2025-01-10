@@ -16,8 +16,8 @@ Flutter app that displays a gallery of images.
 
 ## links 
 
-Screen shots:
-<img src="storage/emulated/0/DCIM/Screenshots/Screenshot_2025-01-10-11-42-15-478_com.example.gallery.jpg" alt="Alt Text" width="300" height="200">
+Screen shots: [https://drive.google.com/folderview?id=1iBDbMbHDgeMLL7N8HYhccowDbtzXCjLr]
+
 Sreen recording of app: [https://drive.google.com/file/d/1iBBUh3otQNnVAiX4crXRyGjiqUPXj8XS/view?usp=drivesdk]
 
 Tech Stack used:
