@@ -10,7 +10,8 @@ Flutter app that displays a gallery of images.
 6) Full screen zoom and pan feature for each image. 
 7) Carousel showing different authors in API. 
 8) A toggle button to switch between Grid and List View. 
-9) A download button to download an image.(can be further improved). 
+9) A download button to download an image.(can be further improved.) 
+
 10)Splash screen with animation. 
 
 ## links 
