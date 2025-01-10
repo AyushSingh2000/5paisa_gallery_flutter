@@ -1,16 +1,24 @@
 # gallery
 
-A new Flutter project.
+Flutter app that displays a gallery of images. 
+## Features:
+1) Fetches images from the provided PICSUM API. 
+2) Use of pagination and infinite scrolling. 
+3) Use of caching in images. 
+4) Architecture is MVVM. 
+5) Bloc used for state management. 
+6) Full screen zoom and pan feature for each image. 
+7) Carousel showing different authors in API. 
+8) A toggle button to switch between Grid and List View. 
+9) A download button to download an image.(can be further improved.) 
 
-## Getting Started
+10)Splash screen with animation. 
 
-This project is a starting point for a Flutter application.
+## links 
 
-A few resources to get you started if this is your first Flutter project:
+Screen shots: [https://drive.google.com/folderview?id=1iBDbMbHDgeMLL7N8HYhccowDbtzXCjLr]
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Sreen recording of app: [https://drive.google.com/file/d/1iBBUh3otQNnVAiX4crXRyGjiqUPXj8XS/view?usp=drivesdk]
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Tech Stack used:
+Flutter Dart MVVM Bloc 
