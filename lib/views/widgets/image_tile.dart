@@ -29,7 +29,7 @@ class ImageTile extends StatelessWidget {
           imageUrl: image['download_url'],
           placeholder: (context, url) => Center(child: CPI()),
           errorWidget: (context, url, error) =>
-              Icon(Icons.error, color: Colors.red),
+              const Icon(Icons.error, color: Colors.red),
           fit: BoxFit.cover,
         ),
       ),

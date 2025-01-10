@@ -46,12 +46,12 @@ class ImagePreviewScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.cancel,
                       color: Colors.grey,
                       size: 30,
                     )),
-                SizedBox(
+                const SizedBox(
                   width: 200,
                 ),
                 IconButton(
@@ -59,14 +59,14 @@ class ImagePreviewScreen extends StatelessWidget {
                       // Pass the download URL for the image to the download function
                       _downloadImage(images[initialIndex]['download_url']);
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.download_rounded,
                       color: Colors.grey,
                       size: 30,
                     )),
                 IconButton(
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.share_rounded,
                       color: Colors.grey,
                       size: 30,

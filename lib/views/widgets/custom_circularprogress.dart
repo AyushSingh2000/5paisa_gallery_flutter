@@ -7,7 +7,7 @@ class CPI extends StatelessWidget {
   Widget build(BuildContext context) {
     return Transform.scale(
       scale: 0.6,
-      child: CircularProgressIndicator(color: Colors.white),
+      child: const CircularProgressIndicator(color: Colors.white),
     );
   }
 }

@@ -93,7 +93,7 @@ class _SplashScreenState extends State<SplashScreen> {
               child: AnimatedOpacity(
                 duration: const Duration(milliseconds: 1500),
                 opacity: animate ? 1 : 0,
-                child: Text(
+                child: const Text(
                   'GALLERY',
                   style: TextStyle(
                     color: Colors.white,
@@ -104,23 +104,6 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
           ),
-          // AnimatedPositioned(
-          //   curve: Curves.easeInOut,
-          //   top: animate ? height * 0.85 : height * 0.90,
-          //   duration: const Duration(milliseconds: 2500),
-          //   child: AnimatedOpacity(
-          //     opacity: animate ? 1 : 0,
-          //     duration: const Duration(milliseconds: 1500),
-          //     child: Text(
-          //       'powered by picsum',
-          //       style: TextStyle(
-          //         fontSize: height * 0.02,
-          //         fontWeight: FontWeight.bold,
-          //       ),
-          //       textAlign: TextAlign.center,
-          //     ),
-          //   ),
-          // ),
         ],
       ),
     );

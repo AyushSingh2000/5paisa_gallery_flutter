@@ -23,7 +23,7 @@ class ToggleSwitch extends StatelessWidget {
           child: Stack(
             children: [
               AnimatedAlign(
-                duration: Duration(milliseconds: 300),
+                duration: const Duration(milliseconds: 300),
                 alignment:
                     isToggled ? Alignment.centerRight : Alignment.centerLeft,
                 curve: Curves.easeInOut,
